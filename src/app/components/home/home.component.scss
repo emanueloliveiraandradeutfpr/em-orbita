@@ -1,0 +1,34 @@
+@import "../../../variant-colors.scss";
+
+.main-section {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  gap: 32px;
+
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $zinc-950;
+
+  p {
+    color: $zinc-300;
+  }
+
+  .btn {
+    display: flex;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: $btn-bg-primary;
+    color: $btn-text-primary;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: $btn-primary-hover;
+    }
+    &:focus {
+      stroke: black;
+      background-color: $btn-bg-primary;
+    }
+  }
+}
