@@ -13,6 +13,7 @@
 
   p {
     color: $zinc-300;
+    font-weight: 400 ;
   }
 
   .btn {
@@ -22,6 +23,7 @@
     background-color: $btn-bg-primary;
     color: $btn-text-primary;
     border: none;
+    font-weight: 500;
     cursor: pointer;
     &:hover {
       background-color: $btn-primary-hover;
