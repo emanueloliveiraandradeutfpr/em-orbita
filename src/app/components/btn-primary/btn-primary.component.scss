@@ -1,0 +1,37 @@
+@import "../../../variant-colors.scss";
+
+.btn {  
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+  background-color: $btn-bg-primary;
+  color: $btn-text-primary;
+  font-weight: 500;
+  font-size: 14px;
+
+  &.primary {
+    padding: 12px;
+  }
+  &.secondary {
+    padding: 6px;
+  }
+  cursor: pointer;
+  &:hover {
+    background-color: $btn-primary-hover;
+  }
+  &:focus {
+    stroke: black;
+    background-color: $btn-bg-primary;
+  }
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  .material-icons{
+    font-size: 16px;
+  }
+}

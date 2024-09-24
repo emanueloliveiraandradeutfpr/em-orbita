@@ -14,23 +14,5 @@
   p {
     color: $zinc-300;
     font-weight: 400 ;
-  }
-
-  .btn {
-    display: flex;
-    padding: 12px;
-    border-radius: 8px;
-    background-color: $btn-bg-primary;
-    color: $btn-text-primary;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-    &:hover {
-      background-color: $btn-primary-hover;
-    }
-    &:focus {
-      stroke: black;
-      background-color: $btn-bg-primary;
-    }
-  }
+  }  
 }
