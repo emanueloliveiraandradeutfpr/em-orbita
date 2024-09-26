@@ -1,7 +1,13 @@
 <form class="goal-form">
   <div class="practice-wrapper">
     <div class="head-form">
-      <h2>Cadastrar meta</h2>
+      <div class="header-wrapper">
+        <h2>Cadastrar meta</h2>
+        <button mat-dialog-close>
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+
       <p>
         Adicione atividades que <span>te fazem bem</span> e que você quer
         continuar praticando toda semana.
@@ -39,13 +45,28 @@
         <div class="frequency-option">
           <input type="radio" id="frequency-4" name="frequency" value="4" />
           <label for="frequency-4">4x na semana</label>
-          <span>😜🤨🤯🔥</span>
+          <span>🤨</span>
         </div>
+      </div>
+      <div class="frequency-option">
+        <input type="radio" id="frequency-5" name="frequency" value="5" />
+        <label for="frequency-5">5x na semana</label>
+        <span>😜</span>
+      </div>
+      <div class="frequency-option">
+        <input type="radio" id="frequency-6" name="frequency" value="6" />
+        <label for="frequency-6">6x na semana</label>
+        <span>🤯</span>
+      </div>
+      <div class="frequency-option">
+        <input type="radio" id="frequency-7" name="frequency" value="7" />
+        <label for="frequency-7">Todos dias da semana</label>
+        <span>🔥</span>
       </div>
     </div>
   </div>
-  <mat-dialog-actions align="center">
-    <button mat-button mat-dialog-close>Fechar</button>
-    <button mat-button cdkFocusInitial>Salvar</button>
-  </mat-dialog-actions>
+  <div class="button-wrapper">
+    <button mat-dialog-close>Fechar</button>
+    <button>Salvar</button>
+  </div>
 </form>

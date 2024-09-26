@@ -20,6 +20,20 @@
   height: 100%;
   font-size: 14px;
   font-weight: 500;
+  & .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    button {
+      background-color: transparent;
+      color: $zinc-600;
+      border: none;
+      cursor: pointer;
+      :hover {
+        color: $zinc-300;
+      }
+    }
+  }
+
   & .practice-wrapper {
     display: flex;
     flex-direction: column;
@@ -82,8 +96,31 @@
     border: 1px solid $zinc-900;
     border-radius: 8px;
 
-    & :checked + label {
-      border: 1px solid red;
+    &:has(:checked) {
+      border: 1px solid $pink-500;
+    }
+  }
+}
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: $zinc-400;
+  & button {
+    width: 100%;
+    padding: 11px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid $zinc-900;
+    &:nth-child(1) {
+      background-color: $zinc-900;
+      color: $zinc-400;
+    }
+    &:nth-last-child(1) {
+      background-color: $button-bg-violet;
+      color: $btn-text-primary;
     }
   }
 }
