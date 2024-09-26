@@ -1,29 +1,31 @@
-import { Component, inject, Input } from '@angular/core';
-import {MatDialog, MatDialogModule} from "@angular/material/dialog"
-type BtnVariant = "primary" | "secondary"
+import { Component, inject, Input } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
+import { GoalFormComponent } from '../goal-form/goal-form.component'
+type BtnVariant = 'primary' | 'secondary'
 
 @Component({
   selector: 'app-btn-primary',
   standalone: true,
   imports: [],
   templateUrl: './btn-primary.component.html',
-  styleUrl: './btn-primary.component.scss'
+  styleUrl: './btn-primary.component.scss',
 })
 export class BtnPrimaryComponent {
-  @Input("btn-text") btnText!:string;
-  @Input() disable!: boolean;
-  @Input() variant: BtnVariant ="primary"
+  @Input('btn-text') btnText!: string
+  @Input() disable!: boolean
+  @Input() variant: BtnVariant = 'primary'
 
-
-  readonly dialog = inject(MatDialog);
+  readonly dialog = inject(MatDialog)
 
   openDialog() {
-    console.log("oi");
-    
-    const dialogRef = this.dialog.open(BtnPrimaryComponent);
-
+    const dialogRef = this.dialog.open(GoalFormComponent, {
+      height: '100vh',
+      position: { right: '0' },
+      enterAnimationDuration: 300,
+    })
+    dialogRef.removePanelClass('*')
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+      console.log(`Dialog result: ${result}`)
+    })
   }
 }

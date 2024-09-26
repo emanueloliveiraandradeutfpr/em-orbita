@@ -13,6 +13,12 @@
 
   p {
     color: $zinc-300;
-    font-weight: 400 ;
-  }  
+    font-weight: 400;
+    font-size: 16px;
+    max-width: 340px;
+    text-align: center;
+    span {
+      text-decoration: underline;
+    }
+  }
 }

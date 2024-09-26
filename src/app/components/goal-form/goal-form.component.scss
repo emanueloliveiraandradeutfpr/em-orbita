@@ -1,0 +1,89 @@
+@import "../../../variant-colors.scss";
+
+.mat-dialog-container {
+  border-radius: 0;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background-color: $zinc-950;
+  height: 100vh;
+  max-width: 400px;
+  color: $btn-text-primary;
+  width: 100%;
+}
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  & .practice-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    & h2 {
+      color: $zinc-50;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    & p {
+      margin-top: 12px;
+      font-weight: 400;
+      color: $zinc-400;
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+  .practice-section {
+    display: flex;
+    flex-direction: column;
+    color: $zinc-100;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+
+    input {
+      color: $zinc-400;
+      background-color: black;
+      padding: 14px;
+      border: 0.5px solid $zinc-900;
+      border-radius: 8px;
+      &:focus {
+        outline: 0.5px auto $zinc-600;
+      }
+    }
+  }
+}
+.frequency-section {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  color: $btn-text-primary;
+  h3 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  & .frequency-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 10.5px;
+    border: 1px solid $zinc-900;
+    border-radius: 8px;
+
+    & :checked + label {
+      border: 1px solid red;
+    }
+  }
+}

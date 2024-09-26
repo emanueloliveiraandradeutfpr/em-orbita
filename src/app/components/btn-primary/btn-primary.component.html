@@ -1,11 +1,9 @@
 <button
-  [class]="'btn ' + variant"
   mat-button
   (click)="openDialog()"
+  [class]="'btn ' + variant"
   [disabled]="disable"
-  mat-button (click)="openDialog()"
 >
   <span class="material-icons">add</span>
   {{ btnText }}
 </button>
-
