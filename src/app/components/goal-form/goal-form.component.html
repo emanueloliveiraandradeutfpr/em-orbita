@@ -1,4 +1,4 @@
-<form class="goal-form">
+<form class="goal-form" [formGroup]="useForm" (ngSubmit)="onSubmit()">
   <div class="practice-wrapper">
     <div class="head-form">
       <div class="header-wrapper">
@@ -13,21 +13,38 @@
         continuar praticando toda semana.
       </p>
     </div>
-    <div class="practice-section">
-      <label for="practice">Qual a atividade?</label>
-      <input type="text" id="practice" />
+    <div class="activity-section">
+      <label for="activity">Qual a atividade?</label>
+      <input
+        type="text"
+        id="activity"
+        formControlName="activity"
+        placeholder="Praticar exercícios, meditar, etc..."
+      />
     </div>
 
-    <div class="frequency-section" mat-radio-group>
+    <div class="frequency-section">
       <h3 class="frequency">Quantas vezes na semana?</h3>
       <div class="frequency-options">
         <div class="frequency-option">
-          <input type="radio" id="frequency-1" name="frequency" value="1" />
+          <input
+            type="radio"
+            id="frequency-1"
+            name="frequency"
+            formControlName="frequency"
+            value="1"
+          />
           <label for="frequency-1">1x na semana</label>
           <span>🥱</span>
         </div>
         <div class="frequency-option">
-          <input type="radio" id="frequency-2" name="frequency" value="2" />
+          <input
+            type="radio"
+            id="frequency-2"
+            name="frequency"
+            formControlName="frequency"
+            value="2"
+          />
           <label for="frequency-2">2x na semana</label>
           <span>🙂</span>
         </div>
@@ -37,29 +54,54 @@
             id="frequency-3"
             name="frequency"
             value="3"
+            formControlName="frequency"
             checked
           />
           <label for="frequency-3">3x na semana</label>
           <span>😎</span>
         </div>
         <div class="frequency-option">
-          <input type="radio" id="frequency-4" name="frequency" value="4" />
+          <input
+            type="radio"
+            id="frequency-4"
+            name="frequency"
+            value="4"
+            formControlName="frequency"
+          />
           <label for="frequency-4">4x na semana</label>
           <span>🤨</span>
         </div>
       </div>
       <div class="frequency-option">
-        <input type="radio" id="frequency-5" name="frequency" value="5" />
+        <input
+          type="radio"
+          id="frequency-5"
+          name="frequency"
+          formControlName="frequency"
+          value="5"
+        />
         <label for="frequency-5">5x na semana</label>
         <span>😜</span>
       </div>
       <div class="frequency-option">
-        <input type="radio" id="frequency-6" name="frequency" value="6" />
+        <input
+          type="radio"
+          id="frequency-6"
+          name="frequency"
+          formControlName="frequency"
+          value="6"
+        />
         <label for="frequency-6">6x na semana</label>
         <span>🤯</span>
       </div>
       <div class="frequency-option">
-        <input type="radio" id="frequency-7" name="frequency" value="7" />
+        <input
+          type="radio"
+          id="frequency-7"
+          name="frequency"
+          value="7"
+          formControlName="frequency"
+        />
         <label for="frequency-7">Todos dias da semana</label>
         <span>🔥</span>
       </div>
@@ -67,6 +109,8 @@
   </div>
   <div class="button-wrapper">
     <button mat-dialog-close>Fechar</button>
-    <button>Salvar</button>
+    <button type="submit" [disabled]="!useForm.valid">
+      @if (!loading()) { Salvar }@else {carregando...}
+    </button>
   </div>
 </form>

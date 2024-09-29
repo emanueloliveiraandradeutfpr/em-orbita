@@ -34,7 +34,7 @@
     }
   }
 
-  & .practice-wrapper {
+  & .activity-wrapper {
     display: flex;
     flex-direction: column;
 
@@ -54,7 +54,7 @@
       }
     }
   }
-  .practice-section {
+  .activity-section {
     display: flex;
     flex-direction: column;
     color: $zinc-100;
@@ -109,18 +109,30 @@
   gap: 12px;
   color: $zinc-400;
   & button {
+    cursor: pointer;
     width: 100%;
     padding: 11px;
-    cursor: pointer;
     border-radius: 8px;
-    border: 1px solid $zinc-900;
     &:nth-child(1) {
+      border: 1px solid $zinc-900;
       background-color: $zinc-900;
       color: $zinc-400;
+      &:hover {
+        background-color: $zinc-800;
+      }
     }
     &:nth-last-child(1) {
-      background-color: $button-bg-violet;
       color: $btn-text-primary;
+      background-color: $button-bg-violet;
+      border: none;
+      &:hover {
+        background-color: $violet-600;
+      }
+
+      &:disabled {
+        background-color: #c4b5fd;
+        cursor: not-allowed;
+      }
     }
   }
 }
