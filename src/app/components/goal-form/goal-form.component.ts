@@ -11,7 +11,8 @@ import {
   Validators,
 } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button'
-import { MatDialogModule } from '@angular/material/dialog'
+// biome-ignore lint/style/useImportType: <explanation>
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
 import { MatRadioModule } from '@angular/material/radio'
 import { CreateGoalService } from '../../services/create-goal.service'
 
@@ -39,7 +40,10 @@ export class GoalFormComponent {
   ])
   @Output() goal!: string
 
-  constructor(private goalService: CreateGoalService) {
+  constructor(
+    private goalService: CreateGoalService,
+    public dialogRef: MatDialogRef<GoalFormComponent>
+  ) {
     this.useForm = new FormGroup({
       activity: new FormControl('', [
         Validators.minLength(1),
@@ -60,7 +64,13 @@ export class GoalFormComponent {
         .subscribe({
           next: () => {
             this.useForm.reset()
+          },
+          complete: () => {
             this.loading.set(false)
+            this.dialogRef.close()
+          },
+          error: error => {
+            console.log(error.error.message)
           },
         })
     }

@@ -23,8 +23,5 @@ export class BtnPrimaryComponent {
       position: { right: '0' },
       enterAnimationDuration: 300,
     })
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`)
-    })
   }
 }
