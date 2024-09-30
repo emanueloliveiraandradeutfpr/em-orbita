@@ -1,6 +1,6 @@
 @import "../../../variant-colors.scss";
 
-.btn {  
+.btn {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -14,10 +14,10 @@
   font-size: 14px;
 
   &.primary {
-    padding: 12px;
+    padding: 10px 16px;
   }
   &.secondary {
-    padding: 6px;
+    padding: 6px 12px !important;
   }
   cursor: pointer;
   &:hover {
@@ -31,7 +31,7 @@
     opacity: 0.6;
   }
 
-  .material-icons{
+  .material-icons {
     font-size: 16px;
   }
 }

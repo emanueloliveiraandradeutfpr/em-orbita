@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button'
 // biome-ignore lint/style/useImportType: <explanation>
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
 import { MatRadioModule } from '@angular/material/radio'
-import { CreateGoalService } from '../../services/create-goal.service'
+import { CreateGoalService } from '../../services/create/create-goal.service'
 
 @Component({
   selector: 'app-goal-form',
