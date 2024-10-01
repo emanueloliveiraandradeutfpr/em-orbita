@@ -1,0 +1,149 @@
+@import "../../../variant-colors.scss";
+
+.main-section {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  padding: 10px;
+
+  align-items: center;
+  height: 100vh;
+  background-color: $zinc-950;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 40px 0 24px 0;
+  justify-content: space-between;
+  .logo {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: flex-start;
+    h2 {
+      color: $zinc-50;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+}
+.progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: $zinc-400;
+  p {
+    span {
+      color: $zinc-100;
+    }
+  }
+  .completion-head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.mat-mdc-progress-bar {
+  /* size */
+  --mdc-linear-progress-active-indicator-height: 8px;
+  --mdc-linear-progress-track-height: 8px;
+  /* border-radius*/
+  --mdc-linear-progress-track-shape: 999px;
+
+  --mdc-linear-progress-active-indicator-color: rgba(
+    124,
+    58,
+    237,
+    1
+  ); //progress bar color
+  --mdc-linear-progress-track-color: white;
+}
+
+.goals-to-complete {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    background-color: transparent;
+    border: 1px dotted $zinc-800;
+    border-radius: 58px;
+    color: $zinc-300;
+    font-size: 14px;
+    padding: 8px 12px;
+
+    &:hover {
+      border: 1px dotted $zinc-700;
+    }
+    &:focus {
+      border: 1px dotted $pink-500;
+    }
+  }
+  .material-icons {
+    color: $zinc-600;
+    font-size: 16px;
+  }
+}
+
+.current-week {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  color: $zinc-400;
+  font-size: 14px;
+  font-weight: 400;
+
+  h3 {
+    color: $zinc-100;
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .day-head {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    h4 {
+      font-size: 16px;
+      font-weight: 500;
+      color: $zinc-50;
+    }
+  }
+  .material-icons {
+    color: $pink-400;
+    font-size: 16px;
+  }
+  span {
+    color: $zinc-100;
+  }
+}
+
+.completion-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+  .completion-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+}

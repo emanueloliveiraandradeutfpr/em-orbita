@@ -1,0 +1,109 @@
+<section class="main-section">
+  <div class="content-wrapper">
+    <div class="header">
+      <div class="logo">
+        <app-logo></app-logo>
+        <h2>{{ "05" }} a {{ "12 de Agosto" }}</h2>
+      </div>
+
+      <app-btn-primary
+        [btn-text]="'Cadastrar meta'"
+        [variant]="'secondary'"
+      ></app-btn-primary>
+    </div>
+
+    <section class="progress-wrapper">
+      <mat-progress-bar
+        class="progress-bar"
+        mode="determinate"
+        value="40"
+      ></mat-progress-bar>
+      <div class="completion-head">
+        <p>
+          Você completou <span>{{ 8 }}</span> de <span>{{ 15 }}</span> metas
+          nessa semana.
+        </p>
+        <span> {{ "58%" }} </span>
+      </div>
+    </section>
+
+    <div class="goals-to-complete">
+      <button>
+        <span class="material-icons">add</span>
+        Nadar
+      </button>
+      <button>
+        <span class="material-icons">add</span>
+        Meditar
+      </button>
+      <button>
+        <span class="material-icons">add</span>
+        Estudar
+      </button>
+      <button>
+        <span class="material-icons">add</span>
+        Estudar
+      </button>
+      <button [disabled]="disabled">
+        <span class="material-icons">add</span>
+        Praticar exercício
+      </button>
+    </div>
+
+    <section class="current-week">
+      <h3>Sua semana</h3>
+      @if (vazio) {
+      <p class="">Você ainda não completou nenhuma meta essa semana.</p>
+      }@else {
+      <div class="day-head">
+        <h4>
+          {{ "Hoje" }}
+        </h4>
+        <span>({{ "06 de Agosto" }})</span>
+      </div>
+      <div class="completion-wrapper">
+        <div class="completion-item">
+          <span class="material-icons">task_alt</span>
+          <p>
+            Você completou "<span>{{ "Acordar cedo" }}</span
+            >" às
+            <span>{{ "08:13h" }}</span>
+          </p>
+        </div>
+        <div class="completion-item">
+          <span class="material-icons">task_alt</span>
+          <p>
+            Você completou "<span>{{ "Acordar cedo" }}</span
+            >" às
+            <span>{{ "08:13h" }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="day-head">
+        <h4>
+          {{ "Hoje" }}
+        </h4>
+        <span>({{ "06 de Agosto" }})</span>
+      </div>
+      <div class="completion-wrapper">
+        <div class="completion-item">
+          <span class="material-icons">task_alt</span>
+          <p>
+            Você completou "<span>{{ "Acordar cedo" }}</span
+            >" às
+            <span>{{ "08:13h" }}</span>
+          </p>
+        </div>
+        <div class="completion-item">
+          <span class="material-icons">task_alt</span>
+          <p>
+            Você completou "<span>{{ "Acordar cedo" }}</span
+            >" às
+            <span>{{ "08:13h" }}</span>
+          </p>
+        </div>
+      </div>
+      }
+    </section>
+  </div>
+</section>
