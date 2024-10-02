@@ -4,4 +4,3 @@ export interface PendingGoalsResponse {
   desiredWeeklyFrequency: number
   completionCounts: number
 }
-;[]
