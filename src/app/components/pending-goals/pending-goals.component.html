@@ -1,0 +1,12 @@
+<div class="goals-to-complete">
+  @if (!pendingGoals) { Nenhuma meta cadastrada esta semana } @else { @for (goal
+  of pendingGoals; track goal.id) {
+  <button
+    [disabled]="goal.completionCounts >= goal.desiredWeeklyFrequency"
+    (click)="completion(goal)"
+  >
+    <span class="material-icons">add</span>
+    {{ goal.title }}
+  </button>
+  } }
+</div>

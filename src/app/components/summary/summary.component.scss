@@ -70,37 +70,6 @@
   --mdc-linear-progress-track-color: white;
 }
 
-.goals-to-complete {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  button {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-
-    background-color: transparent;
-    border: 1px dotted $zinc-800;
-    border-radius: 58px;
-    color: $zinc-300;
-    font-size: 14px;
-    padding: 8px 12px;
-
-    &:hover {
-      border: 1px dotted $zinc-700;
-    }
-    &:focus {
-      border: 1px dotted $pink-500;
-    }
-  }
-  .material-icons {
-    color: $zinc-600;
-    font-size: 16px;
-  }
-}
-
 .current-week {
   display: flex;
   gap: 24px;

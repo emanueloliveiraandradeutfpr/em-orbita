@@ -3,9 +3,8 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import type { Observable } from 'rxjs'
 
-interface CreateGoalCompletionResponse {
-  '': ''
-}
+// biome-ignore lint/complexity/noBannedTypes: <explanation>
+type CreateGoalCompletionResponse = {}
 
 @Injectable({
   providedIn: 'root',
