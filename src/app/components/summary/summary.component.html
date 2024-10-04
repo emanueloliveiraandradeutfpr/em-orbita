@@ -16,32 +16,37 @@
       <mat-progress-bar
         class="progress-bar"
         mode="determinate"
-        value="40"
+        [value]="percentage()"
       ></mat-progress-bar>
       <div class="completion-head">
         <p>
-          Você completou <span>{{ 8 }}</span> de <span>{{ 15 }}</span> metas
-          nessa semana.
+          Você completou <span>{{ completed() }}</span> de
+          <span>{{ disireComplete() }}</span> metas nessa semana.
         </p>
-        <span> {{ "58%" }} </span>
+        <span> {{ percentage() }}% </span>
       </div>
     </section>
-    @if (pendingGoals) {
+    @if (!pendingGoals) {
+    <p class="no-data">{{ content() + " tente novamente mais tarde" }}</p>
+    } @else {
     <app-pending-goals
       [pendingGoals]="pendingGoals"
       (completionGoal)="update()"
+      ngSkipHydration
     ></app-pending-goals>
-
     }
 
     <section class="current-week">
       <h3>Sua semana</h3>
-      @if (vazio) {
-      <p class="">Você ainda não completou nenhuma meta essa semana.</p>
+      @if (vazio()) {
+      <p class="no-data">Você ainda não completou nenhuma meta essa semana.</p>
       }@else {
       <div class="day-head">
+        <!-- @for (day of summary.goalsPerDay; track $index) {
+        <p>day</p>
+        } -->
         <h4>
-          {{ "Hoje" }}
+          {{ summary.total }}
         </h4>
         <span>({{ "06 de Agosto" }})</span>
       </div>

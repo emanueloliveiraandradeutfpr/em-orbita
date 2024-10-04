@@ -38,7 +38,6 @@ export class GoalFormComponent {
     Validators.max(7),
     Validators.required,
   ])
-  @Output() goal!: string
 
   constructor(
     private goalService: CreateGoalService,

@@ -23,7 +23,7 @@ export class PendingGoalsComponent {
 
   completion(goal: PendingGoalsResponse) {
     this.createGoalCompletion.createGoal(goal.id).subscribe({
-      next: response => {
+      next: () => {
         this.completionGoal.emit('update()')
       },
     })
