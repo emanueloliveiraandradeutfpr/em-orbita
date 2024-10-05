@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Output,
-  signal,
-} from '@angular/core'
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core'
 import {
   FormControl,
   FormGroup,
@@ -56,8 +51,6 @@ export class GoalFormComponent {
     this.loading.set(true)
 
     if (this.useForm.valid) {
-      console.log(this.useForm.value)
-
       this.goalService
         .createGoal(this.useForm.value.activity, this.useForm.value.frequency)
         .subscribe({
