@@ -9,6 +9,7 @@
       <app-btn-primary
         [btn-text]="'Cadastrar meta'"
         [variant]="'secondary'"
+        (update)="update()"
       ></app-btn-primary>
     </div>
 
@@ -40,59 +41,25 @@
       <h3>Sua semana</h3>
       @if (vazio()) {
       <p class="no-data">Você ainda não completou nenhuma meta essa semana.</p>
-      }@else {
+      }@else { @for (day of summaryDay(); track $index) {
       <div class="day-head">
-        <!-- @for (day of summary.goalsPerDay; track $index) {
-        <p>day</p>
-        } -->
         <h4>
-          {{ summary.total }}
+          {{ day | date : "dd" }}
         </h4>
-        <span>({{ "06 de Agosto" }})</span>
+        <span>({{ day | date : "dd 'de' MMMM" : "" : "pt-BR" }})</span>
       </div>
+      @for (completion of summaryCompletions()[$index]; track $index) {
       <div class="completion-wrapper">
         <div class="completion-item">
           <span class="material-icons">task_alt</span>
           <p>
-            Você completou "<span>{{ "Acordar cedo" }}</span
+            Você completou "<span>{{ completion.title }}</span
             >" às
-            <span>{{ "08:13h" }}</span>
-          </p>
-        </div>
-        <div class="completion-item">
-          <span class="material-icons">task_alt</span>
-          <p>
-            Você completou "<span>{{ "Acordar cedo" }}</span
-            >" às
-            <span>{{ "08:13h" }}</span>
+            <span>{{ completion.completedAt | date : "HH':'mm" }}</span>
           </p>
         </div>
       </div>
-      <div class="day-head">
-        <h4>
-          {{ "Hoje" }}
-        </h4>
-        <span>({{ "06 de Agosto" }})</span>
-      </div>
-      <div class="completion-wrapper">
-        <div class="completion-item">
-          <span class="material-icons">task_alt</span>
-          <p>
-            Você completou "<span>{{ "Acordar cedo" }}</span
-            >" às
-            <span>{{ "08:13h" }}</span>
-          </p>
-        </div>
-        <div class="completion-item">
-          <span class="material-icons">task_alt</span>
-          <p>
-            Você completou "<span>{{ "Acordar cedo" }}</span
-            >" às
-            <span>{{ "08:13h" }}</span>
-          </p>
-        </div>
-      </div>
-      }
+      } } }
     </section>
   </div>
 </section>

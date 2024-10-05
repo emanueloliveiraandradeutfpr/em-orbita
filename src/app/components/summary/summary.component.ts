@@ -9,11 +9,11 @@ import { GetPendingGoalsService } from '../../services/get/get-pending-goals.ser
 import { GetSummaryService } from '../../services/get/get-summary.service'
 import type { PendingGoalsResponse } from '../../interfaces/pending-goals-response'
 import type { SummaryResponse } from '../../interfaces/summary-response'
-import { DatePipe } from '@angular/common'
+import { CommonModule, DatePipe } from '@angular/common'
 import localePT from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common'
 registerLocaleData(localePT)
-
+type Response = { id: string; title: string; completedAt: string }[]
 @Component({
   selector: 'app-summary',
   standalone: true,
@@ -22,6 +22,7 @@ registerLocaleData(localePT)
     LogoComponent,
     MatProgressBarModule,
     PendingGoalsComponent,
+    CommonModule,
   ],
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.scss',
@@ -32,9 +33,13 @@ export class SummaryComponent {
   disireComplete = signal(0)
   completed = signal(0)
   percentage = signal(0)
-  vazio = signal(false)
   content = signal('')
-  pipe = new DatePipe('pt-BR')
+  vazio = signal(false)
+  summaryDay = signal<string[]>([])
+  summaryCompletions = signal<Response[]>([])
+
+  date = new DatePipe('pt-BR')
+
   constructor(
     private pendingGoalsService: GetPendingGoalsService,
     private summaryService: GetSummaryService
@@ -63,14 +68,22 @@ export class SummaryComponent {
     })
   }
   getSummary() {
+    this.summaryCompletions.set([])
+    this.summaryDay.set([])
+
     this.summaryService.getSummary().subscribe({
       next: summary => {
         this.summary = summary.summary
-        console.log(this.summary)
-        this.summary.goalsPerDay
-
         for (const s in this.summary.goalsPerDay) {
-          console.log(this.summary.goalsPerDay[s])
+          this.summaryDay.update(values => {
+            return [...values, s]
+          })
+
+          this.summaryCompletions.update(values => [
+            ...values,
+            this.summary.goalsPerDay[s],
+          ])
+          console.log(this.summaryCompletions)
         }
       },
     })
