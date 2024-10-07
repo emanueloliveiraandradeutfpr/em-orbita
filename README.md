@@ -1,3 +1,6 @@
+# Figma
+https://www.figma.com/design/GrF4cMIFq33qir3YTBfnqD/NLW-Pocket-JS-%E2%80%A2-in.orbit-(Community)?node-id=2001-2&node-type=canvas&t=vsO1hteWPmeo3lWi-0
+
 # Web
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
